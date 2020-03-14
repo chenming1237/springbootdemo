@@ -4,10 +4,12 @@ import com.example.demo.domain.UserAccount;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
+import org.springframework.stereotype.Repository;
 
 import java.math.BigDecimal;
 import java.util.List;
 
+@Repository
 public interface UserAccountDao {
 
     @Select("select * from user_account")

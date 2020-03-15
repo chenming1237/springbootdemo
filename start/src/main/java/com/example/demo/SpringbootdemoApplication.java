@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @RestController
-@MapperScan(value = "com.example.demo.dao")
 public class SpringbootdemoApplication {
 
 

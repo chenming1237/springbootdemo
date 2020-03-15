@@ -2,6 +2,8 @@ package com.example.demo.service;
 
 import com.example.demo.dao.UserAccountDao;
 import com.example.demo.domain.UserAccount;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
@@ -14,6 +16,8 @@ import java.util.List;
 @Service
 public class TestServiceImpl implements TestService {
 
+    private static final Log log = LogFactory.getLog(TestServiceImpl.class);
+
     @Autowired
     private UserAccountDao userAccountDao;
 
@@ -22,6 +26,7 @@ public class TestServiceImpl implements TestService {
 
     @Override
     public List<UserAccount> findList() {
+        log.debug("查询所有用户信息");
         return userAccountDao.findList();
     }
 

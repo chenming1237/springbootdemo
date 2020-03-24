@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.example.demo.resource.handler.ResourceFactory;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,6 +14,7 @@ public class SpringbootdemoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringbootdemoApplication.class,args);
+		ResourceFactory resourceFactory = ResourceFactory.INSTANCE;
 	}
 
 	@RequestMapping("/hello")

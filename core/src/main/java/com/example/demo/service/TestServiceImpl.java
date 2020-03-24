@@ -31,7 +31,7 @@ public class TestServiceImpl implements TestService {
     }
 
     @Override
-    @Transactional(propagation = Propagation.REQUIRED)
+    @Transactional(rollbackFor = RuntimeException.class, propagation = Propagation.REQUIRED)
     public void transfer(Long fromId, Long toId, BigDecimal num) {
         reduceAccount(fromId, num);
         try{
